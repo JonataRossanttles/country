@@ -5,22 +5,22 @@ import seta_back_branca from '../imagens/seta-back-branca.png'
 import  {Link,useParams} from 'react-router-dom';
 
 
-
 function Descri(){
     
     const {pais} = useParams()
     const [borderCountries, setBorderCountries] = useState([]);
     const {data,tema} = useContext(DataContext)
+    const localstorageData = JSON.parse(localStorage.getItem('paises'))
    
-    
-        var information =  data.filter((element)=>element.translations.pt == pais)
-    
+  
+        var information =  localstorageData.filter((element)=>element.translations.pt == pais)
+        
        
     useEffect(()=>{
         if('borders' in  information[0]) {
             const siglaborder = information[0].borders  
         var bordercountry = siglaborder.map((element)=>{
-           const elemento =  data.find((dados)=> dados.alpha3Code == element)
+           const elemento =  localstorageData.find((dados)=> dados.alpha3Code == element)
             return  <Link to={`/${elemento.translations.pt}`} className="link-descricao"> <button className= {tema ?  "button-paises-viz"   : "button-paises-viz-light"  }>{elemento.translations.pt}</button> </Link> 
           
         })  

@@ -204,12 +204,13 @@ header{
 }
 main{
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas com largura igual */
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); /* 4 colunas com largura igual */
   gap: 77px; /* Espaço entre os itens do grid */
   padding-top: 50px;
   max-width: 1113px;
   position: relative;
   margin: auto;
+  justify-items: center;
 }
 .body-dark{
   background-color: hsl(207, 26%, 17%);
@@ -222,6 +223,7 @@ main{
   height: 320px;
   background-color: hsl(0, 0%, 100%);  
   border-radius: 5px 5px 0px 0px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.13);
 }
 .card-dark{
   width: 220px;
@@ -363,14 +365,12 @@ main{
   max-width: 900px;
 }
 main{
-  gap: 41px;
+  gap: 116px;
 }
 .img-pais{
   height: 130px;
 }
-.card-light,.card-dark{
-  width: 195px;
-}
+
 .img-pais-descricao {
   width: 390px;
   height: 279px;
@@ -415,10 +415,9 @@ main{
   .header,#container-geral-pesquisa,main{
     max-width: 600px;
   }
-  main{
-    grid-template-columns: repeat(3, 1fr); /* 4 colunas com largura igual */
-    gap: 7px;
-  }
+main{
+  gap: 159px;
+}
   
 }
 @media screen and (max-width:610px){
@@ -429,7 +428,7 @@ main{
     flex-direction: column;
   }
   main{
-    grid-template-columns: 1fr; 
+   
     gap: 7px;
     justify-items: center;
   }

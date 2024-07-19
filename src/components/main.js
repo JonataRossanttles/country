@@ -7,7 +7,7 @@ import  {Link} from 'react-router-dom';
 function Main(){
 
    
-
+    
     const {data,tema,nomeinput,nomefiltro} = useContext(DataContext)
     const [arrayfiltrado,setArrayfiltrado] = useState(data)
     const [arrayregion,setArrayregion] = useState(data)
@@ -27,7 +27,7 @@ function Main(){
         }
         
     },[nomefiltro,data])
-    console.log(data)
+    
 
     useEffect(()=>{
        
